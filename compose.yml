@@ -1,0 +1,17 @@
+services:
+  application: 
+    build:
+      context: ./app
+    ports: 
+      - target: 3000
+        published: 80
+    volumes:
+      - ./app:/web
+      - /web/node_modules
+    networks:
+      - eshopping
+
+
+networks:
+  eshopping: 
+    driver: bridge
